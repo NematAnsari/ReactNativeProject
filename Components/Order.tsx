@@ -8,7 +8,14 @@ const Order =()=>{
     return(
        <ScrollView>
         <View>
-          {order.map((orders)=><Text key={orders.name}>{orders.name}</Text>)}
+          {order.map((orders)=>
+          <View>
+
+          <Text key={orders.name}>{orders.name}</Text>
+          <Text key={orders.price}>{orders.price}</Text>
+          </View>
+          
+          )}
         </View>
        </ScrollView>
     )
