@@ -1,4 +1,4 @@
-import { View, Text, FlatList, Image, TouchableOpacity } from "react-native";
+import { View, Text, FlatList, Image, TouchableOpacity, TouchableHighlight } from "react-native";
 import type { RootState } from "../src/redux/store";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../src/redux/slices/Counter";
@@ -72,8 +72,10 @@ const Product = ({navigation}:any) => {
                     backgroundColor: "#fff",
                      elevation: 1 }}>
 
-                <Text style={{ color: "#000", fontSize: 16, fontWeight: '700' }}>
-                    Redux Tool Kit</Text>
+                
+                    <TouchableOpacity onPress={()=>navigation.navigate("SwiperForm")}>
+                            <Text>Form Swiper</Text>
+                         </TouchableOpacity>
 
             <TouchableOpacity onPress={()=>navigation.navigate("Cart")}>
                 <Text style={{
@@ -109,8 +111,16 @@ const Product = ({navigation}:any) => {
                        flexDirection:"row",
                        margin:10
                        }}>
+                         
+                            
+                    
+                        
+                        <Image  source={{ uri: item.images }} style={{ width: "30%", height: 120, borderRadius: 10 }}  />
+                        <View ><TouchableHighlight onPress={()=>navigation.navigate("Swiper")}><Text>----</Text></TouchableHighlight></View>
+                        
+                    
+                    
 
-                        <Image source={{ uri: item.images }} style={{ width: "30%", height: 100, borderRadius: 10 }} />
                         <View style={{padding:10}}>
                             <Text style={{fontSize:18,fontWeight:"600",color:'#000',}}>{item.title}</Text>
                             <Text style={{fontSize:18,fontWeight:"600",color:'green',}}>{'₹'+item.price}</Text>
@@ -127,6 +137,7 @@ const Product = ({navigation}:any) => {
                                <Text style={{color:"white"}}>Add to Cart </Text>
                             </TouchableOpacity>
                          </View>
+                       
                        
                     </View>
                 )

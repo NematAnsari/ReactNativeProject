@@ -10,6 +10,8 @@ import BuyProduct from './Components/BuyProduct';
 import Order from './Components/Order';
 import Rating from "./Components/Rating"
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import Swipers from './Components/Swipers';
+import SwiperForm from './Components/SwiperForm';
 const App = () => {
   const Stack = createNativeStackNavigator();
 
@@ -22,6 +24,8 @@ const App = () => {
     <Stack.Screen name="Buy_Product" component={BuyProduct}/>
     <Stack.Screen name='OrderHistory' component={Order}/>
     <Stack.Screen name="Rating" component={Rating}/>
+    <Stack.Screen name='Swiper' component={Swipers}/>
+    <Stack.Screen name='SwiperForm' component={SwiperForm}/>
    </Stack.Navigator>
     </NavigationContainer>
     </Provider>
