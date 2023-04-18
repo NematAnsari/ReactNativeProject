@@ -8,6 +8,7 @@ import Cart from './Components/Cart';
 import { NavigationContainer } from '@react-navigation/native';
 import BuyProduct from './Components/BuyProduct';
 import Order from './Components/Order';
+import Rating from "./Components/Rating"
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 const App = () => {
   const Stack = createNativeStackNavigator();
@@ -20,6 +21,7 @@ const App = () => {
     <Stack.Screen name="Cart" component={Cart} options={{headerShown:true}}/>
     <Stack.Screen name="Buy_Product" component={BuyProduct}/>
     <Stack.Screen name='OrderHistory' component={Order}/>
+    <Stack.Screen name="Rating" component={Rating}/>
    </Stack.Navigator>
     </NavigationContainer>
     </Provider>
